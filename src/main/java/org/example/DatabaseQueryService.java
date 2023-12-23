@@ -135,7 +135,7 @@ public class DatabaseQueryService {
             }
             System.out.println();
 
-            //connection.close();
+            connection.close();
         } catch (SQLException | IOException e) {
             e.printStackTrace();
         }
