@@ -1,10 +1,11 @@
 package org.example;
 
 public class Main {
+    
     public static void main(String[] args){
 
-//        new DatabaseInitService(); // SECOND
-//        new DatabasePopulateService(); // THIRD
+        new DatabaseInitService();
+        new DatabasePopulateService();
         DatabaseQueryService databaseQueryService = new DatabaseQueryService();
         databaseQueryService.findMaxSalaryCountWorker();
         databaseQueryService.findMaxProjectsClient();
@@ -12,7 +13,7 @@ public class Main {
         databaseQueryService.findYoungestOldestPerson();
         databaseQueryService.findProjectPrice();
 
-        //DeletObjects deletObjects = new DeletObjects();
-        //deletObjects.sendDelet();
+        DeletObjects deletObjects = new DeletObjects();
+        deletObjects.sendDelet();
     }
 }
