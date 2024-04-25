@@ -11,8 +11,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DatabaseQueryService {
+    
     public List<MaxSalaryCountWorker> findMaxSalaryCountWorker(){
+        
         List<MaxSalaryCountWorker> result = new ArrayList<>();
+        
         try {
             Connection connection = Database.getInstance().getConnection();
             String sqlFilePath = "src/main/resources/find_max_salary_worker.sql";
@@ -28,16 +31,16 @@ public class DatabaseQueryService {
                 System.out.println("Client -> " + maxSalaryCountWorker.getName() + ", Salary -> " + maxSalaryCountWorker.getSalary());
             }
             System.out.println();
-
-            //connection.close();
         } catch (SQLException | IOException e) {
             e.printStackTrace();
         }
         return result;
     }
-    ////////////////////////////////////////////////////////////////////////////////////
+    
     public List<MaxProjectCountClient> findMaxProjectsClient(){
+        
         List<MaxProjectCountClient> result = new ArrayList<>();
+        
         try {
             Connection connection = Database.getInstance().getConnection();
             String sqlFilePath = "src/main/resources/find_max_projects_client.sql";
@@ -53,16 +56,16 @@ public class DatabaseQueryService {
                 System.out.println("Client -> " + maxProjectCountClient.getName() + ", ProjectCount -> " + maxProjectCountClient.getProjectCount());
             }
             System.out.println();
-
-            //connection.close();
         } catch (SQLException | IOException e) {
             e.printStackTrace();
         }
         return result;
     }
-    ////////////////////////////////////////////////////////////////////////////////////
+    
     public List<LongestProject> findLongestProject(){
+        
         List<LongestProject> result = new ArrayList<>();
+        
         try {
             Connection connection = Database.getInstance().getConnection();
             String sqlFilePath = "src/main/resources/find_longest_project.sql";
@@ -85,16 +88,16 @@ public class DatabaseQueryService {
                         + ", FinishData -> " + longestProject.getFinishData());
             }
             System.out.println();
-
-            //connection.close();
         } catch (SQLException | IOException e) {
             e.printStackTrace();
         }
         return result;
     }
-/////////////////////////////////////////////////////
+    
     public List<YoungestOldestPerson> findYoungestOldestPerson(){
+        
         List<YoungestOldestPerson> result = new ArrayList<>();
+        
         try {
             Connection connection = Database.getInstance().getConnection();
             String sqlFilePath = "src/main/resources/find_youngest_eldest_workers.sql";
@@ -110,15 +113,16 @@ public class DatabaseQueryService {
                 System.out.println("Name -> " + youngestOldestPerson.getName() + ", Birthdate -> " + youngestOldestPerson.getBirthday());
             }
             System.out.println();
-
-            //connection.close();
         } catch (SQLException | IOException e) {
             e.printStackTrace();
         }
         return result;
     }
+    
     public List<ProjectPrice> findProjectPrice(){
+        
         List<ProjectPrice> result = new ArrayList<>();
+        
         try {
             Connection connection = Database.getInstance().getConnection();
             String sqlFilePath = "src/main/resources/print_project_prices.sql";
@@ -134,7 +138,6 @@ public class DatabaseQueryService {
                 System.out.println("PROJECT_ID -> " + projectPrice.getProjectID() + ", PROJECT_COST -> " + projectPrice.getProjectCost());
             }
             System.out.println();
-
             connection.close();
         } catch (SQLException | IOException e) {
             e.printStackTrace();
@@ -152,4 +155,3 @@ public class DatabaseQueryService {
         return query.toString();
     }
 }
-
